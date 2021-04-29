@@ -97,6 +97,7 @@ public class ReactiveExamplesTest {
                 .doOnComplete(countDownLatch::countDown)
                 .subscribe(person -> log.info(person.sayMyName()));
 
+        // when the line below is missing, there is no delayed output
         countDownLatch.await();
 
     }
